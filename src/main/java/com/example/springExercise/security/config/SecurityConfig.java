@@ -1,4 +1,4 @@
-package com.example.springExercise.security.config;
+//package com.example.springExercise.security.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
@@ -20,22 +20,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
-@Configuration
-@EnableWebSecurity
-@RequiredArgsConstructor
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-    private final UserDetailsService userDetailsService;
-
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http //인가정책
-                .authorizeRequests()   // 요청에 대한 인가 확인
-                .anyRequest().authenticated();   //어떠한 요청에도 인가함
-
-        http //인증정책
-                .formLogin();         //폼 로그인 방식으로 인증
+//
+//@Configuration
+//@EnableWebSecurity
+//@RequiredArgsConstructor
+//public class SecurityConfig extends WebSecurityConfigurerAdapter {
+//
+//    private final UserDetailsService userDetailsService;
+//
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http //인가정책
+//                .authorizeRequests()   // 요청에 대한 인가 확인
+//                .anyRequest().authenticated();   //어떠한 요청에도 인가함
+//
+//        http //인증정책
+//                .formLogin();         //폼 로그인 방식으로 인증
 //                .loginPage("/loginPage")    // 누구나 접근 가능해야함
 //                .defaultSuccessUrl("/")     // 성공했을때 redirect되는 url
 //                .failureUrl("/login")       // 실패했을때 redirect되는 url
@@ -86,10 +86,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        http    // 동시 세션 제어
 //                .sessionManagement()
 //                .maximumSessions(1)
-//                .maxSessionsPreventsLogin(false);
-        http    // 세션 고정 보호
-                .sessionManagement()
-                .sessionFixation().none();
-
-    }
-}
+//                .maxSessionsPreventsLogin(true);
+//        http    // 세션 고정 보호
+//                .sessionManagement()
+//                .sessionFixation().changeSessionId();
+//
+//    }
+//}
